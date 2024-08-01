@@ -53,17 +53,17 @@ function finishQuiz(){
     let points=Math.floor((perguntasCorretas / questions.length)*100)
 
     if(points<30){
-        document.querySelector('.scoreText1').innerHTML=`Ta ruim em!! ${userName}`
+        document.querySelector('.scoreText1').innerHTML=`Ta ruim em ${userName} !!`
         document.querySelector('.scorePct').style.color='#FF0000'
     }else if(points >= 40 && points<70){
-        document.querySelector('.scoreText1').innerHTML=`Bom!! ${userName}`
+        document.querySelector('.scoreText1').innerHTML=`Boa ${userName} !!`
         document.querySelector('.scorePct').style.color='#FFFF00'
     }else if(points>=70){
-        document.querySelector('.scoreText1').innerHTML=`Mandou bem!! ${userName}`;
+        document.querySelector('.scoreText1').innerHTML=`Mandou bem ${userName} !!`;
         document.querySelector('.scorePct').style.color='#0D630D'
     }
 
-    document.querySelector('.scorePct').innerHTML=`Acertou ${points} %`
+    document.querySelector('.scorePct').innerHTML=`${userName} Acertou ${points} %`
     document.querySelector('.scoreText2').innerHTML=`Você respondeu ${questions.length} e acertou ${perguntasCorretas}`
 
     document.querySelector('.scoreArea').style.display='block';
