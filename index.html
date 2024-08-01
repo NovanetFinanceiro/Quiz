@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Quiz</title>
+</head>
+<body>
+
+     <!-- Tela de introdução -->
+     <div id="intro">
+        <h1 class="text">Quiz</h1>
+        <p class="text_p">Esse quiz foi feito para testar seus conhecimentos após o treinamento <br>
+            , por favor reserve um minuto para se concentrar nas perguntas <br> e qualquer dúvda não se preoupe, em seguida 
+            você terá um guia auxiliar
+        </p>
+        <div id="nameEntry">
+            <input type="text" id="userName" placeholder="Informe seu nome" />
+            <button id="submitNameBtn">Enviar</button>
+        </div>
+        <button id="startBtn">Iniciar</button>
+    </div>
+
+    <!-- Modal com o guia do quiz -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Guia do Quiz</h2>
+            <span class="info"><em>1.</em> Após clicar em Continuar , abrirá uma aba com as perguntas</span>
+            <span class="info"><em>2.</em> Você terá uma chance pense bem! a alternativa que marcar irá automaticamente contar seu ponto</span>
+            <span class="info"><em>3.</em> Você só poderá passar para pergunta seguinte após marcar a alternativa da questão que você está!</span>
+            <span class="info"><em>4.</em> Ao final seus pontos serão contados e você terá a sua porcentagem</span>
+            <button id="exitBtn">Sair</button>
+            <button id="beginBtn">Começar</button>
+        </div>
+    </div>
+
+    
+     <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-error">&times;</span>
+            <h2>Aviso</h2>
+            <p>Por favor, informe seu nome.</p>
+            <button id="errorOkBtn">OK</button>
+        </div>
+    </div>
+
+    <div id="quizArea" class="quizArea">
+        <div class="quizContent">
+    <div class="progress">
+        <div class="progress--bar"></div>
+    </div>
+
+    <h1>Quiz</h1>
+
+    <div class="questionArea">
+        <div class="question">...</div>
+        <div class="options">
+            
+        </div>
+    </div>
+</div>
+
+    <div class="scoreArea">
+        <img src="./image/prize.png" class="prizeImage" />
+        <div class="scoreText1"></div>
+        <div class="scorePct"></div>
+        <div class="scoreText2"></div>
+        <button class="resetar">Fazer novamente</button>
+    </div>
+
+    <footer>Direitos Reservados &copyJoão Queiroz</footer>
+    
+    <script src="questoes.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

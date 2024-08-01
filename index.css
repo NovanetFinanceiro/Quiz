@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('./image/sincerely-media-4dSXcNTyXaI-unsplash.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #FFF;
+    margin: 20px 0;
+}
+
+.progress {
+    height: 8px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+.progress--bar {
+    background-color: #00FF00;
+    height: 100%;
+    width:100%;
+    transition: all ease .5s;
+}
+
+.questionArea,
+.scoreArea {
+    display: none;
+}
+
+.questionArea {
+    max-width: 500px;
+    width: 100%;
+}
+
+.question {
+    color: #FFF;
+    font-size: 18px;
+    margin: 20px 0;
+}
+.option {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.option span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+.option:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scoreArea {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: center;
+}
+.prizeImage {
+    width: auto;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.scoreText1 {
+    color: #000;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.scorePct {
+    color:#00FF00;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.scoreText2 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.scoreArea button {
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #CCC;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.scoreArea button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 13px;
+}
+/* Estilo para a tela de introdução */
+#intro {
+    text-align: center;
+}
+
+#intro h1 {
+    margin-top: 50px;
+}
+
+#intro p {
+    font-size: 18px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+#nameEntry {
+    margin-bottom: 20px;
+}
+
+#nameEntry input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#nameEntry button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00FF00;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#nameEntry button:hover {
+    background-color: #00CC00;
+}
+
+#intro button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00FF00;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#intro button:hover {
+    background-color: #00CC00;
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1; /* Fica acima de outros conteúdos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Fundo escurecido */
+}
+
+.modal-content {
+    background-color: #FFF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00FF00;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.modal-content button:hover {
+    background-color: #00CC00;
+}
+
+/* Estilo para a área do quiz (escondido inicialmente) */
+.quizArea {
+    display: none; /* Escondido por padrão */
+    text-align: center;
+}
+.text{
+    font-size: 55px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+}
+.text_p{
+    font-size: 55px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+}
