@@ -10,12 +10,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url('./image/O6YCRQ0.jpg');
+    background: #838383;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    color: #FFF;
+    color: #b4b4b4;
     margin: 20px 0;
 }
 
@@ -41,6 +41,9 @@ h1 {
 .questionArea {
     max-width: 500px;
     width: 100%;
+    background: #4d4a4a93;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .question {
@@ -52,7 +55,7 @@ h1 {
     display: flex;
     align-items: center;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(233, 227, 227, 0.3);
     border-radius: 10px;
     margin-bottom: 5px;
     color: #fff;
@@ -76,7 +79,7 @@ h1 {
 }
 
 .scoreArea {
-    background-color: rgba(71, 69, 69, 0.5);
+    background-color: rgba(145, 140, 140, 0.5);
     padding: 20px;
     border-radius: 20px;
     margin: 10px;
@@ -150,17 +153,17 @@ footer {
     margin-right: 10px;
 }
 
-#nameEntry button {
+#nameEntry #submitNameBtn {
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #f5f5f5;
+    background-color: #00CC00;
     color: #FFF;
     font-size: 16px;
     cursor: pointer;
 }
 
-#nameEntry button:hover {
+#nameEntry #submitNameBtn:hover {
     background-color: #00CC00;
 }
 #submitNameBtn{
@@ -271,6 +274,9 @@ footer {
     font-weight: 700;
     filter: drop-shadow(0 0 5px #09001d);
 }
+
+
+
 /* Define a animação flutuante */
 @keyframes flutuar {
     0% {
@@ -287,5 +293,10 @@ footer {
   /* Aplica a animação ao elemento */
   .text {
     animation: flutuar 3s ease-in-out infinite; /* Animação contínua e suave */
+    color: #e6dfdf;
   }
 /* Define o estilo do parágrafo com o efeito de apresentação */
+
+footer{
+    color: #000;
+}

@@ -37,13 +37,25 @@ function mostrarQuestao(){
     }
 }
 
+let respostas = []; // Para armazenar se o usuário acertou ou errou a questão
+
 function clicandoOpcao(e){
     let clickedOption=parseInt(e.target.getAttribute('data-op'))
+    let isCorrect = questions[questaosAtual].answer === clickedOption;
 
-    if(questions[questaosAtual].answer=== clickedOption){
+    respostas.push({
+        question: questions[questaosAtual].question,
+        options: questions[questaosAtual].options,
+        correctAnswer: questions[questaosAtual].answer,
+        selectedAnswer: clickedOption,
+        isCorrect: isCorrect
+    });
+
+    if(isCorrect) {
         perguntasCorretas++;  //variavel criada inicialmente em 0
         //console.log('Acertou')
     }
+
     questaosAtual++   //indo para próxima pergunta
     mostrarQuestao();
 }
@@ -54,7 +66,7 @@ function finishQuiz(){
 
     if(points<30){
         document.querySelector('.scoreText1').innerHTML=`Ta ruim em ${userName} !!`
-        document.querySelector('.scorePct').style.color='#FF0000'
+        document.querySelector('.scorePct').style.color='#000'
     }else if(points >= 40 && points<70){
         document.querySelector('.scoreText1').innerHTML=`Boa ${userName} !!`
         document.querySelector('.scorePct').style.color='#FFFF00'
@@ -69,6 +81,10 @@ function finishQuiz(){
     document.querySelector('.scoreArea').style.display='block';
     document.querySelector('.questionArea').style.display='none'
     document.querySelector('.progress--bar').style.width=`100%`
+
+    // Adicionar eventos aos botões de visualização
+    document.querySelector('.btn_correct').addEventListener('click', mostrarAcertos);
+    document.querySelector('.btn_error').addEventListener('click', mostrarErros);
 }
 
 function resetEvent(){
@@ -95,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'block';
         intro.style.display = 'none';
     });
+
+    
 
     // Fecha o modal e retorna para a tela de introdução
     exitBtn.addEventListener('click', () => {
@@ -132,3 +150,32 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Por favor, informe seu nome.');
     }
 });
+
+function mostrarAcertos() {
+    
+    let acertosHtml = '';
+    respostas.forEach((resposta, index) => {
+        if (resposta.isCorrect) {
+            acertosHtml += `<div>
+                <p>Pergunta: ${resposta.question}</p>
+                <p>Resposta correta: ${resposta.options[resposta.correctAnswer]}</p>
+                <p>Sua resposta: ${resposta.options[resposta.selectedAnswer]}</p>
+            </div><br>`;
+        }
+    });
+    document.querySelector('.scoreArea').innerHTML = acertosHtml;
+}
+
+function mostrarErros() {
+    let errosHtml = '';
+    respostas.forEach((resposta, index) => {
+        if (!resposta.isCorrect) {
+            errosHtml += `<div>
+                <p>Pergunta: ${resposta.question}</p>
+                <p>Resposta correta: ${resposta.options[resposta.correctAnswer]}</p>
+                <p>Sua resposta: ${resposta.options[resposta.selectedAnswer]}</p>
+            </div><br>`;
+        }
+    });
+    document.querySelector('.scoreArea').innerHTML = errosHtml;
+}
